@@ -1,5 +1,46 @@
 ## 配置
+### 1. 简单的安装和使用（Linux）
+下载地址http://redis.io/download
+
 使用的redis的版本是5.0
+* 安装步骤：
+
+1 首先需要安装gcc，把下载好的redis-3.0.0-rc2.tar.gz 放到linux /usr/local文件夹下
+
+2 进行解压 tar -zxvf redis-3.0.0-rc2.tar.gz
+
+3 进入到redis-3.0.0目录下，进行编译 make
+
+4 进入到src下进行安装 make install  验证(ll查看src下的目录，有redis-server 、redis-cil即可)
+
+5 建立俩个文件夹存放redis命令和配置文件
+
+mkdir -p /usr/local/redis/etc
+
+mkdir -p /usr/local/redis/bin
+
+6 把redis-3.0.0下的redis.conf 移动到/usr/local/redis/etc下，
+ 
+   cp redis.conf /usr/local/redis/etc/
+
+7 把redis-3.0.0/src里的mkreleasehdr.sh、redis-benchmark、redis-check-aof、redis-check-dump、redis-cli、redis-server 
+文件移动到bin下，命令：
+```
+mv mkreleasehdr.sh redis-benchmark
+redis-check-aof redis-check-dump redis-cli
+redis-server /usr/local/redis/bin
+```
+8 启动时并指定配置文件：
+```
+./redis-server /usr/local/redis/etc/redis.conf（注意要使用后
+```
+9 验证启动是否成功：
+ps -ef | grep redis 查看是否有redis服务 或者 查看端口：netstat -tunpl | grep 6379
+
+进入redis客户端 ./redis-cli 退出客户端quit
+退出redis服务： 
+
+
 
 默认配置RDB持久化方式
 
