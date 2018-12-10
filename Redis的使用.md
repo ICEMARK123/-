@@ -1,4 +1,4 @@
-## 配置
+# 配置
 ### 1. 简单的安装和使用（Linux）
 下载地址http://redis.io/download
 
