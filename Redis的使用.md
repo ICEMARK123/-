@@ -37,8 +37,11 @@ redis-server /usr/local/redis/bin
 9 验证启动是否成功：
 ps -ef | grep redis 查看是否有redis服务 或者 查看端口：netstat -tunpl | grep 6379
 
-进入redis客户端 ./redis-cli 退出客户端quit
-退出redis服务： 
+进入redis客户端
+```
+./redis-cli -h ip -p
+```
+quit退出redis服务： 
 
 
 
